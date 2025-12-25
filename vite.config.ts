@@ -3,20 +3,17 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  // FIXED: Using relative paths avoids repo name mismatch issues
-  base: './', 
+  // This must match your sub-folder name on GitHub Pages
+  base: '/paradox-ai-research-facility/', 
   plugins: [react()],
-  server: {
-    port: 3000,
-    host: '0.0.0.0',
-  },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
-    }
+      '@': path.resolve(__dirname, './'),
+    },
   },
   build: {
     outDir: 'dist',
+    // Ensures assets are found correctly in the sub-folder
     assetsDir: 'assets',
   }
 });
