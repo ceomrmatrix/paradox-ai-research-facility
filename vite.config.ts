@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  // This ensures assets load from the correct repo subfolder
-  base: '/paradox-ai-research-facility/', 
+  // FIXED: Using relative paths avoids repo name mismatch issues
+  base: './', 
   plugins: [react()],
   server: {
     port: 3000,
@@ -12,8 +12,11 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // Allows imports using the '@' symbol to point to root
       '@': path.resolve(__dirname, '.'),
     }
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
   }
 });
