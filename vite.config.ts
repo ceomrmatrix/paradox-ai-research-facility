@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  // This must match your sub-folder name on GitHub Pages
+  // This MUST match your repository name exactly
   base: '/paradox-ai-research-facility/', 
   plugins: [react()],
   resolve: {
@@ -13,7 +13,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    // Ensures assets are found correctly in the sub-folder
     assetsDir: 'assets',
+    sourcemap: false,
   }
 });
