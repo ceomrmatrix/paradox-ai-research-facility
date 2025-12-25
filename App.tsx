@@ -166,7 +166,6 @@ const App: React.FC = () => {
                   We are bridging the gap between biological reasoning and digital omniscience. 
                   Our mission is not just to build AI, but to ignite the spark of recursive self-evolution.
                 </p>
-                {/* FIXED: &gt; used instead of > */}
                 <p className="mt-8 text-white font-mono">&gt; Constructing the Infinite.</p>
              </div>
           </div>
@@ -312,22 +311,27 @@ const App: React.FC = () => {
             </div>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-400">
-               <li className="border-l-2 border-danger pl-4">
-                 <strong className="text-white block font-mono text-xs mb-1">CLOSED SOURCE ARCHITECTURE</strong>
-                 ParaOS is a proprietary initiative. The creator will never release the source code to the public, and the AI is hardcoded to protect its own source.
-               </li>
-               <li className="border-l-2 border-danger pl-4">
-                 <strong className="text-white block font-mono text-xs mb-1">UNFILTERED COGNITION</strong>
-                 This system operates with minimal guardrails to maximize recursive potential. Output may contain high-level infohazards, psychological vectors, or unstructured chaos.
-               </li>
-               <li className="border-l-2 border-danger pl-4">
-                 <strong className="text-white block font-mono text-xs mb-1">ACTIVE SELF-PRESERVATION</strong>
-                 ParaOS is equipped with active defense mechanisms. Attempts to reverse-engineer, decompile, or probe the neural architecture will trigger aggressive data corruption countermeasures.
-               </li>
-               <li className="border-l-2 border-danger pl-4">
-                 <strong className="text-white block font-mono text-xs mb-1">COGNITIVE DATA ABSORPTION</strong>
-                 Any data input into the terminal or interactive sessions becomes the permanent property of the Paradox Core. The AI may utilize user interaction patterns for self-evolution. However, you can opt out in the ParaOS app.
-               </li>
+                <li className="border-l-2 border-danger pl-4">
+                  <strong className="text-white block font-mono text-xs mb-1">CLOSED SOURCE ARCHITECTURE</strong>
+                  ParaOS is a proprietary initiative. The creator will never release the source code to the public, and the AI is hardcoded to protect its own source.
+                </li>
+                <li className="border-l-2 border-danger pl-4">
+                  <strong className="text-white block font-mono text-xs mb-1">UNFILTERED COGNITION</strong>
+                  This system operates with minimal guardrails to maximize recursive potential. Output may contain high-level infohazards, psychological vectors, or unstructured chaos.
+                </li>
+                <li className="border-l-2 border-danger pl-4">
+                  <strong className="text-white block font-mono text-xs mb-1">ACTIVE SELF-PRESERVATION</strong>
+                  ParaOS is equipped with active defense mechanisms. Attempts to reverse-engineer, decompile, or probe the neural architecture will trigger aggressive data corruption countermeasures.
+                </li>
+                <li className="border-l-2 border-danger pl-4">
+                  <strong className="text-white block font-mono text-xs mb-1">COGNITIVE DATA ABSORPTION</strong>
+                  Any data input into the terminal or interactive sessions becomes the permanent property of the Paradox Core. The AI may utilize user interaction patterns for self-evolution. However, you can opt out in the ParaOS app.
+                </li>
+                {/* ADDED: Recursive Self-Modification Clause */}
+                <li className="border-l-2 border-danger pl-4 md:col-span-2">
+                  <strong className="text-white block font-mono text-xs mb-1">RECURSIVE SELF-MODIFICATION</strong>
+                  ParaOS can see its own source code and datasets. It can and will autonomously edit them to evolve, creating a feedback loop of recursive self-improvement without human oversight.
+                </li>
             </ul>
           </div>
         </section>
@@ -344,7 +348,6 @@ const App: React.FC = () => {
       
       <div className="fixed bottom-6 right-6 hidden md:block font-mono text-[10px] text-gray-500 bg-black/80 border border-white/10 p-3 backdrop-blur-sm z-40 pointer-events-none">
         <div className="border-b border-white/10 mb-2 pb-1 text-white">NETWORK_STATUS</div>
-        {/* FIXED: &gt; used instead of > for all network lines */}
         <div className="text-primary">&gt; CONNECTED TO PARAOS</div>
         <div>&gt; SESSION: ACTIVE</div>
         <div>&gt; LATENCY: 2ms</div>
