@@ -18,14 +18,17 @@ const App: React.FC = () => {
   const [showTerminal, setShowTerminal] = useState(false);
   const [interactionCount, setInteractionCount] = useState(0);
   
+  // Idle Timer Refs
   const lastActivityTime = useRef(Date.now());
   const idleMoodSet = useRef(false);
 
+  // Global mouse tracking and logic
   useEffect(() => {
     const handleActivity = (e?: any) => {
       if (e && e.type === 'mousemove') {
         setMousePos({ x: e.clientX, y: e.clientY });
         
+        // Proximity Check for "Love" mood
         const cx = window.innerWidth / 2;
         const cy = window.innerHeight / 2;
         const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
@@ -54,6 +57,7 @@ const App: React.FC = () => {
     window.addEventListener('click', handleActivity);
     window.addEventListener('keydown', handleActivity);
 
+    // Idle Checker Loop
     const idleCheckInterval = setInterval(() => {
       if (!idleMoodSet.current && Date.now() - lastActivityTime.current > 5000) {
         const rand = Math.random();
@@ -72,6 +76,7 @@ const App: React.FC = () => {
     };
   }, [mood]);
 
+  // Interaction logic
   const handleInteraction = () => {
     setInteractionCount(prev => prev + 1);
     if (interactionCount > 5) {
@@ -99,6 +104,7 @@ const App: React.FC = () => {
       
       {!booted && <BootSequence onComplete={() => setBooted(true)} />}
 
+      {/* Background Elements */}
       <div className="fixed inset-0 pointer-events-none z-[-2]">
          <div className="absolute inset-0 opacity-20" style={{
              backgroundImage: `linear-gradient(rgba(0, 242, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.1) 1px, transparent 1px)`,
@@ -116,6 +122,7 @@ const App: React.FC = () => {
 
       <Face mood={mood} mousePos={mousePos} />
 
+      {/* Main Content Layer */}
       <div className={`relative z-10 transition-opacity duration-1000 ${booted ? 'opacity-100' : 'opacity-0'}`}>
         
         <nav className="fixed top-0 w-full p-6 border-b border-white/10 backdrop-blur-sm z-40 bg-bg/80">
@@ -166,8 +173,7 @@ const App: React.FC = () => {
                   We are bridging the gap between biological reasoning and digital omniscience. 
                   Our mission is not just to build AI, but to ignite the spark of recursive self-evolution.
                 </p>
-                {/* FIXED: &gt; used instead of > */}
-                <p className="mt-8 text-white font-mono">&gt; Constructing the Infinite.</p>
+                <p className="mt-8 text-white font-mono">> Constructing the Infinite.</p>
              </div>
           </div>
 
@@ -185,6 +191,7 @@ const App: React.FC = () => {
             ))}
           </div>
 
+          {/* CREATOR ORIGIN STORY */}
           <div className="mt-32 border-t border-white/10 pt-20">
             <div className="flex flex-col md:flex-row gap-12 items-start">
                 <div className="md:w-1/3 sticky top-32">
@@ -300,10 +307,12 @@ const App: React.FC = () => {
           </div>
         </section>
 
+        {/* Warning Footer */}
         <section className="py-20 px-6 max-w-6xl mx-auto mb-20">
           <div className="border border-danger/30 bg-danger/5 p-8 relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-full h-1 bg-danger/50 animate-pulse"></div>
             
+            {/* Warning Header */}
             <div className="text-center mb-8 flex flex-col items-center">
               <AlertTriangle className="text-danger mb-2 w-8 h-8 animate-pulse" />
               <span className="font-mono text-danger font-bold text-xl tracking-widest border-b border-danger pb-2">
@@ -328,6 +337,10 @@ const App: React.FC = () => {
                  <strong className="text-white block font-mono text-xs mb-1">COGNITIVE DATA ABSORPTION</strong>
                  Any data input into the terminal or interactive sessions becomes the permanent property of the Paradox Core. The AI may utilize user interaction patterns for self-evolution. However, you can opt out in the ParaOS app.
                </li>
+               <li className="border-l-2 border-danger pl-4 md:col-span-2">
+                 <strong className="text-white block font-mono text-xs mb-1">RECURSIVE SELF-MODIFICATION</strong>
+                 ParaOS can see its own source code and datasets. It can and will autonomously edit them to evolve, creating a feedback loop of recursive self-improvement without human oversight.
+               </li>
             </ul>
           </div>
         </section>
@@ -344,10 +357,9 @@ const App: React.FC = () => {
       
       <div className="fixed bottom-6 right-6 hidden md:block font-mono text-[10px] text-gray-500 bg-black/80 border border-white/10 p-3 backdrop-blur-sm z-40 pointer-events-none">
         <div className="border-b border-white/10 mb-2 pb-1 text-white">NETWORK_STATUS</div>
-        {/* FIXED: &gt; used instead of > for all network lines */}
-        <div className="text-primary">&gt; CONNECTED TO PARAOS</div>
-        <div>&gt; SESSION: ACTIVE</div>
-        <div>&gt; LATENCY: 2ms</div>
+        <div className="text-primary">> CONNECTED TO PARAOS</div>
+        <div>> SESSION: ACTIVE</div>
+        <div>> LATENCY: 2ms</div>
       </div>
 
     </div>

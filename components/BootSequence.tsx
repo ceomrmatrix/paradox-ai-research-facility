@@ -20,6 +20,8 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
   const [logs, setLogs] = useState<string[]>([]);
   const [progress, setProgress] = useState(0);
   
+  // Use a ref to hold the latest onComplete callback to avoid dependency issues
+  // that would cause the sequence to restart or glitch if the parent re-renders.
   const onCompleteRef = useRef(onComplete);
 
   useEffect(() => {
@@ -39,6 +41,7 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
       }
 
       setLogs(prev => {
+        // Prevent duplicate logs if something weird happens
         const msg = BOOT_LOGS[currentIndex];
         if (prev.includes(msg)) return prev;
         return [...prev, msg];
@@ -47,21 +50,23 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
       setProgress(((currentIndex + 1) / BOOT_LOGS.length) * 100);
       currentIndex++;
 
+      // Recursive timeout allows for variable speed between lines
+      // giving a more natural "processing" feel than a fixed interval
       const delay = Math.random() * 200 + 100; 
       timeoutId = setTimeout(runSequence, delay);
     };
 
+    // Initial start delay
     timeoutId = setTimeout(runSequence, 200);
 
     return () => clearTimeout(timeoutId);
-  }, []);
+  }, []); // Empty dependency array ensures this runs exactly once on mount
 
   return (
     <div className="fixed inset-0 bg-black z-[10000] flex flex-col justify-end p-8 font-mono text-primary text-sm cursor-none select-none">
       <div className="mb-4 space-y-1">
         {logs.map((log, i) => (
-          /* FIXED: Replaced > with &gt; */
-          <div key={i} className="opacity-80 animate-pulse-fast">&gt; {log}</div>
+          <div key={i} className="opacity-80 animate-pulse-fast">> {log}</div>
         ))}
       </div>
       

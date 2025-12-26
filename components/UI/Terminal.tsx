@@ -95,8 +95,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onClose, triggerMood }) => {
       <div className="flex-1 p-4 overflow-y-auto font-mono custom-scrollbar">
         {lines.map(line => (
           <div key={line.id} className="mb-1 break-words">
-            {/* FIXED: &gt; for safety */}
-            {line.type === 'input' && <span className="text-primary mr-2">&gt;</span>}
+            {line.type === 'input' && <span className="text-primary mr-2">{'>'}</span>}
             {line.type === 'error' && <span className="text-danger mr-2">{'[ERR]'}</span>}
             {line.type === 'success' && <span className="text-green-500 mr-2">{'[OK]'}</span>}
             {line.type === 'system' && <span className="text-secondary mr-2">{'[SYS]'}</span>}
@@ -108,8 +107,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onClose, triggerMood }) => {
 
       {/* Input */}
       <form onSubmit={handleSubmit} className="p-2 bg-black/50 border-t border-white/10 flex">
-        {/* FIXED: &gt; for safety */}
-        <span className="text-primary mr-2 animate-pulse">&gt;</span>
+        <span className="text-primary mr-2 animate-pulse">{'>'}</span>
         <input 
           autoFocus
           type="text" 
