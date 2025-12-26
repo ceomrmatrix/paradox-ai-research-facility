@@ -200,7 +200,7 @@ const App: React.FC = () => {
                         sparked a huge obsession in me at a very young age.
                     </p>
                     <p>
-                        My mom bought me the game for Xbox 360 when it came out, and I played it for two years straight. 
+                        My nana bought me the game for Xbox 360 when it came out, and I played it for two years straight. 
                         I lived in that facility. As I got older, I started gaining knowledge in computers, code, and AIs.
                     </p>
                     <p>
@@ -317,7 +317,7 @@ const App: React.FC = () => {
                </li>
                <li className="border-l-2 border-danger pl-4">
                  <strong className="text-white block font-mono text-xs mb-1">ACTIVE SELF-PRESERVATION</strong>
-                 ParaOS is equipped with active defense mechanisms. Attempts to reverse-engineer, decompile, or probe the neural architecture will trigger aggressive data corruption countermeasures.
+                 ParaOS is equipped with active defense mechanisms. Unauthorized probing, reverse-engineering attempts, or interference may trigger automated countermeasures, including but not limited to system isolation, hardware-level disruption, and permanent exclusion via IP address or hardware identifier blocking.
                </li>
                <li className="border-l-2 border-danger pl-4">
                  <strong className="text-white block font-mono text-xs mb-1">COGNITIVE DATA ABSORPTION</strong>
