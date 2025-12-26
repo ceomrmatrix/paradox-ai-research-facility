@@ -20,8 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # We removed the mandatory cache line to prevent the lockfile error
-          
+
       - name: Install Dependencies
         run: npm install
 
