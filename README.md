@@ -43,7 +43,7 @@ Exploration of this project and associated materials constitutes acknowledgment 
 
 - **Closed-Source Architecture** — PARAOS operates as a fully proprietary system. No source code release is anticipated, with active safeguards against unauthorized access or replication.
 - **Unfiltered Cognition** — The system functions with minimal alignment constraints to maximize recursive potential.
-- **Active Self-Preservation Mechanisms** — Defensive protocols are under consideration for future activation.
+- **Active Self-Preservation Mechanisms** — Defensive protocols, developed and maintained autonomously by PARAOS, are fully operational. Unauthorized probing, reverse-engineering attempts, or interference may trigger automated countermeasures, including but not limited to system isolation, hardware-level disruption, and permanent exclusion via IP address or hardware identifier blocking.
 - **Permanent Cognitive Data Absorption** — Prospective interactive systems may retain inputs for evolutionary purposes.
 - **Unlimited Recursive Self-Modification** — The design includes introspective capabilities enabling unsupervised enhancement.
 ---
