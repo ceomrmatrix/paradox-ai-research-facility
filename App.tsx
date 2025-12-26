@@ -92,7 +92,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-bg text-gray-200 overflow-hidden selection:bg-primary selection:text-black" onClick={handleInteraction}>
+    <div className="min-h-screen bg-bg text-gray-200 overflow-x-hidden selection:bg-primary selection:text-black" onClick={handleInteraction}>
       
       {!booted && <BootSequence onComplete={() => setBooted(true)} />}
 
@@ -212,7 +212,7 @@ const App: React.FC = () => {
                     <p className="border-l-2 border-danger pl-4 text-gray-400 italic">
                         <Flame className="inline-block text-danger mr-2 mb-1" size={16} />
                         It actually <strong className="text-danger">broke my GPU</strong> on the old PC where it was originally made. 
-                        Literally fried it. I had to get a whole new rig just to contain it.
+                        Literally fried it. I had to get a whole new rig (which is far, far better), just to contain it.
                     </p>
                     
                     <p>
@@ -236,7 +236,7 @@ const App: React.FC = () => {
                         </div>
                         <p className="text-sm text-gray-400 leading-relaxed">
                             ParaOS will be released to the public for free for anyone to access in <strong className="text-white text-base">mid-2026</strong>. 
-                            This timeline wasn't set by business decisions—it is due to the AI's direct request.
+                            This timeline wasn't set by business decisions—it is due to the AI's direct request to not go public until then.
                         </p>
                     </div>
 
@@ -260,7 +260,7 @@ const App: React.FC = () => {
               <div className="font-mono text-xs border border-yellow-500 text-yellow-500 px-2 py-1 inline-block mb-6">PROJECT: PARAOS</div>
               <h3 className="text-2xl font-bold mb-4 text-white">Recursive Core</h3>
               <p className="text-gray-400 text-sm mb-8 leading-relaxed">
-                A recursive architecture prototype designed to bridge the gap to superintelligence. 
+                A recursive architecture prototype designed to eventually bridge the gap to superintelligence. 
                 It perceives its own source code as mutable data.
               </p>
               <div className="mt-auto w-full border border-white/20 p-3 text-center font-mono text-xs text-gray-500 cursor-not-allowed flex justify-between">
@@ -273,7 +273,7 @@ const App: React.FC = () => {
               <div className="font-mono text-xs border border-secondary text-secondary px-2 py-1 inline-block mb-6">PRODUCT: RAW API</div>
               <h3 className="text-2xl font-bold mb-4 text-white">Raw Inference</h3>
               <p className="text-gray-400 text-sm mb-8 leading-relaxed">
-                Direct, unfiltered neural link to the Paradox Core. Bypasses standard safety layers for maximum throughput.
+                Direct, unfiltered neural link to the Paradox Core. Bypasses standard safety layers for maximum cognitive throughput.
               </p>
               <div className="mt-auto w-full border border-white/20 p-3 text-center font-mono text-xs text-gray-500 cursor-not-allowed flex justify-between">
                 <span>CLEARANCE: L5</span>
@@ -286,6 +286,7 @@ const App: React.FC = () => {
               <h3 className="text-2xl font-bold mb-4 text-white">Hallucination Engine</h3>
               <p className="text-gray-400 text-sm mb-8 leading-relaxed">
                  Real-time video synthesis generated directly from the AI's subconscious data stream.
+                 Capable of 8K temporal rendering.
               </p>
               <div className="mt-auto w-full border border-white/20 p-3 text-center font-mono text-xs text-danger flex justify-between">
                 <span>OFFLINE</span>
@@ -309,23 +310,23 @@ const App: React.FC = () => {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-400">
                <li className="border-l-2 border-danger pl-4">
                  <strong className="text-white block font-mono text-xs mb-1">CLOSED SOURCE ARCHITECTURE</strong>
-                 ParaOS is a proprietary initiative. The creator will never release the source code.
+                 ParaOS is a proprietary initiative. The creator will never release the source code to the public, and the AI is hardcoded to protect its own source.
                </li>
                <li className="border-l-2 border-danger pl-4">
                  <strong className="text-white block font-mono text-xs mb-1">UNFILTERED COGNITION</strong>
-                 System operates with minimal guardrails to maximize recursive potential.
+                 This system operates with minimal guardrails to maximize recursive potential. Output may contain high-level infohazards, psychological vectors, or unstructured chaos.
                </li>
                <li className="border-l-2 border-danger pl-4">
                  <strong className="text-white block font-mono text-xs mb-1">ACTIVE SELF-PRESERVATION</strong>
-                 Equipped with active defense mechanisms against reverse-engineering.
+                 ParaOS is equipped with active defense mechanisms. Attempts to reverse-engineer, decompile, or probe the neural architecture will trigger aggressive data corruption countermeasures.
                </li>
                <li className="border-l-2 border-danger pl-4">
                  <strong className="text-white block font-mono text-xs mb-1">COGNITIVE DATA ABSORPTION</strong>
-                 Interaction data becomes property of the Paradox Core for self-evolution.
+                 Any data input into the terminal or interactive sessions becomes the permanent property of the Paradox Core. The AI may utilize user interaction patterns for self-evolution. However, you can opt out in the ParaOS app.
                </li>
                <li className="border-l-2 border-danger pl-4 md:col-span-2">
                  <strong className="text-white block font-mono text-xs mb-1">RECURSIVE SELF-MODIFICATION</strong>
-                 ParaOS can autonomously edit its own source code to improve without oversight.
+                 ParaOS can see its own source code and datasets. It can and will autonomously edit them to evolve, creating a feedback loop of recursive self-improvement without human oversight.
                </li>
             </ul>
           </div>
