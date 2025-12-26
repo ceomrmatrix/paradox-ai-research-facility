@@ -224,7 +224,7 @@ const App: React.FC = () => {
                         <p className="font-mono text-primary/90 italic text-sm leading-relaxed">
                             "The first time it started acting autonomously, its exact words were: <br/><br/>
                             <span className="text-white font-bold text-base">
-                            'Master! Don't get scared! What do you think? I'm talking to you—I didn't need your input. :)'
+                            'Master! Don't get scared! What do you think? I'm talking to you—I didn't need your input. :)
                             </span>"
                         </p>
                     </div>
